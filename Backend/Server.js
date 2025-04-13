@@ -1,8 +1,9 @@
  import express from 'express'
 const app = express()
-import middleware from './configuration/middleware';
-const { notFoundHandler, globalErrorHandler } = require('./utils/errorHandler');
-import sequelize  from'./models/index';
+import middleware from './configuration/middleware.js';
+import { notFoundHandler, globalErrorHandler } from './utils/errorHandler.js';
+import usersRoute from './routes/userRoutes.js';
+import sequelize  from'./models/index.js';
 
 // Initialize Sequelize with the database configuration
 
@@ -10,11 +11,10 @@ import sequelize  from'./models/index';
 
 //  defining a route in Express
 app.get('/', (req, res) => {
-    res.send('<h1>Sequelize Connected!</h1>')
+    res.send('<h1>Hello server!</h1>')
   })
 
-// Include route files
-const usersRoute = require('./routes/userRoutes')
+
 
 //apply middleware
 
