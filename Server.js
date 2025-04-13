@@ -1,8 +1,8 @@
-const express = require('express')
+ import express from 'express'
 const app = express()
-const middleware = require('./configuration/middleware');
+import middleware from './configuration/middleware';
 const { notFoundHandler, globalErrorHandler } = require('./utils/errorHandler');
-const sequelize = require('./models/index');
+import sequelize  from'./models/index';
 
 // Initialize Sequelize with the database configuration
 
