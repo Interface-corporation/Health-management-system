@@ -1,12 +1,16 @@
-# the files and directories that should be ignored by HoundCI.
 ignore:
   - node_modules/
-# the rules that HoundCI should follow for JavaScript files.
-javascript:
-  linter: eslint
+
+eslint:
+  enabled: true
   config_file: .eslintrc.json
+  extensions:
+    - .js
+    - .ts
+    - .tsx
   exclude_files:
     - test/**
     - spec/**
-  extensions:
-    - .js
+
+javascript:
+  enabled: false
