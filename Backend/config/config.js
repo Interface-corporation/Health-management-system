@@ -1,7 +1,7 @@
 // config/config.js
 export default {
   username: 'postgres',
-  password: 'komvuga12',
+  password: 'pamella',
   database: 'Mydb',
   host: 'localhost',
   dialect: 'postgres',
