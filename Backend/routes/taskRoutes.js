@@ -5,8 +5,8 @@ import express from "express";
 
 const route = express.Router()
  
-route.post('/',CreateTasks);
-route.get('/',getAllTask)
+route.post('/post',CreateTasks);
+route.get('/get',getAllTask)
 route.get('/:id', getTaskById);
 route.delete('/:id',deleteTask);
 route.put('/:id',updateTask);
