@@ -1,7 +1,18 @@
-export const verificationEmail = (username, link) => ({
-    subject: "Verify your email",
-    html: `<h1>Hello ${username},</h1><p>Please verify your email by clicking <a href="${link}">here</a>.</p>`,
-    text: `Hello ${username},\n\nPlease verify your email by visiting this link: ${link}`
-  });
-  
-  
+
+export const verificationEmail = (verificationUrl) => `
+  <div>
+    <h2>Welcome to Our Platform!</h2>
+    <p>Please click the link below to verify your email address:</p>
+    <a href="${verificationUrl}">Verify Email</a>
+    <p>If you didn't create an account, please ignore this email.</p>
+  </div>
+`;
+
+export const passwordResetEmail = (resetUrl) => `
+  <div>
+    <h2>Password Reset Request</h2>
+    <p>You requested to reset your password. Click the link below to proceed:</p>
+    <a href="${resetUrl}">Reset Password</a>
+    <p>If you didn't request this, please ignore this email.</p>
+  </div>
+`;
