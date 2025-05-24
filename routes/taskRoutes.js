@@ -1,20 +1,22 @@
+import express from 'express'
+import {
+  CreateTask,
+  getAllTasks,
+  getTaskById,
+  DeletTask,
+  updateTask
+} from '../controllers/taskController.js'
 
-import express from 'express' ;
-import { 
-    CreateTask , getAllTasks,getTaskById , DeletTask , updateTask 
-} from '../controllers/taskController.js';
+const router = express.Router()
 
-const router = express.Router();
+router.post('/task', CreateTask)
 
-router.post('/task' , CreateTask) ;
+router.get('/getAll', getAllTasks)
 
-router.get('/getAll', getAllTasks);
+router.get('/getById/:id', getTaskById)
 
-router.get('/getById/:id' , getTaskById);
+router.delete('/deleteTask/:id', DeletTask)
 
-router.delete('/deleteTask/:id' , DeletTask);
-
-router.put('/updateTask/:id' , updateTask );
-
+router.put('/updateTask/:id', updateTask)
 
 export default router

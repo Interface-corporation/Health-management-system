@@ -1,5 +1,5 @@
-import mongoose from 'mongoose';
-import bcrypt from 'bcrypt';
+import mongoose from 'mongoose'
+import bcrypt from 'bcrypt'
 
 const userSchema = new mongoose.Schema({
   email: {
@@ -8,7 +8,10 @@ const userSchema = new mongoose.Schema({
     unique: true,
     trim: true,
     lowercase: true,
-    match: [/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/, 'Please fill a valid email address']
+    match: [
+      /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,
+      'Please fill a valid email address'
+    ]
   },
   password: {
     type: String,
@@ -51,27 +54,27 @@ const userSchema = new mongoose.Schema({
     type: Date,
     default: Date.now
   }
-});
+})
 
 // Hash password before saving
-userSchema.pre('save', async function(next) {
-  if (!this.isModified('password')) return next();
-  
-  this.password = await bcrypt.hash(this.password, 12);
-  next();
-});
+userSchema.pre('save', async function (next) {
+  if (!this.isModified('password')) return next()
+
+  this.password = await bcrypt.hash(this.password, 12)
+  next()
+})
 
 // Update the updatedAt field before saving
-userSchema.pre('save', function(next) {
-  this.updatedAt = Date.now();
-  next();
-});
+userSchema.pre('save', function (next) {
+  this.updatedAt = Date.now()
+  next()
+})
 
 // Method to compare passwords
-userSchema.methods.comparePassword = async function(candidatePassword) {
-  return await bcrypt.compare(candidatePassword, this.password);
-};
+userSchema.methods.comparePassword = async function (candidatePassword) {
+  return await bcrypt.compare(candidatePassword, this.password)
+}
 
-const User = mongoose.model('User', userSchema);
+const User = mongoose.model('User', userSchema)
 
-export default User;
+export default User
