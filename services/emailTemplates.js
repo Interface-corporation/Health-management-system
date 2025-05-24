@@ -1,4 +1,3 @@
-
 export const verificationEmail = (verificationUrl) => `
   <div>
     <h2>Welcome to Our Platform!</h2>
@@ -6,7 +5,7 @@ export const verificationEmail = (verificationUrl) => `
     <a href="${verificationUrl}">Verify Email</a>
     <p>If you didn't create an account, please ignore this email.</p>
   </div>
-`;
+`
 
 export const passwordResetEmail = (resetUrl) => `
   <div>
@@ -15,4 +14,4 @@ export const passwordResetEmail = (resetUrl) => `
     <a href="${resetUrl}">Reset Password</a>
     <p>If you didn't request this, please ignore this email.</p>
   </div>
-`;
+`
