@@ -17,4 +17,4 @@ router.delete('/deleteTask/:id' , DeletTask);
 router.put('/updateTask/:id' , updateTask );
 
 
-export default router
+export default router;
