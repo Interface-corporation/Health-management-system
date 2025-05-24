@@ -4,6 +4,8 @@ import dotenv from 'dotenv';
 import { notFoundHandler, globalErrorHandler } from './utils/errorHandler.js';
 // import usersRoute from './routes/userRoutes.js';
 import authRoutes from './routes/authRoutes.js';
+import taskRoutes from './routes/taskRoutes.js';
+import userRoutes from './routes/userRoutes.js';
 import connectDB from './config/db.js';
 dotenv.config();
 
@@ -20,7 +22,10 @@ app.get('/', (req, res) => {
     message: 'This is the main page of the authentication API'
   });
 });
+
 app.use('/api/auth', authRoutes);
+app.use('/api/task', taskRoutes);
+app.use('/api/user', userRoutes)
 
 
 // Use error-handling middleware

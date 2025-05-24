@@ -1,6 +1,10 @@
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcrypt';
 
+import dotenv from 'dotenv';
+dotenv.config();
+
+
 // Hash password
 export const hashPassword = async (password) => {
     const saltRounds = 10;

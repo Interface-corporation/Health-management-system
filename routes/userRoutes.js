@@ -1,18 +1,18 @@
 // routes/userRoutes.js
 import express from 'express';
+import { getUserbyTask,DeleteUser ,getAllUser , UpdateUser } from '../controllers/userController.js';
 
 const Router = express.Router();
 
-Router.get('/', (req, res) => {
-  res.send('<h1>This is user routes</h1>');
-});
+Router.get('/getTask/:id', getUserbyTask );
 
-Router.get('/1', (req, res) => {
-  res.send('<h1>This is user 1 route</h1>');
-});
+Router.get('/allUser', getAllUser );
 
-Router.get('/2', (req, res) => {
-  res.send('<h1>This is user 2 route</h1>');
-});
+Router.delete('/deleteUser/:id' , DeleteUser);
+
+Router.put('/updateUser/:id' , UpdateUser)
+
+
+
 
 export default Router;
